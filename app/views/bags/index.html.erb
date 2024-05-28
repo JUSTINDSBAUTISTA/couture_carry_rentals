@@ -1,0 +1,14 @@
+<div class="container p-5 my-5 border">
+  <div class="cards">
+  <% @bags.each do |bag| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <ul>
+        <li><%= bag.brand %></li>
+        <li><%= bag.description %></li>
+        <li><%= bag.condition %></li>
+        <li><%= bag.price_per_day %></li>
+      </ul>
+    </div>
+  </div>
+  <% end %>
+</div>
