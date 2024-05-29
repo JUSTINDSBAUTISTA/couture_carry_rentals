@@ -1,4 +1,30 @@
 .bg-light-pink {
+  background-color: #f4d2d2; /* Light pink color */
+}
+
+.footer {
   background-color: #636363;
   color: white;
+  padding: 15px 0; /* Adjust padding as needed */
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.list-inline {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-inline-item {
+  display: inline-block;
+  margin-right: 10px; /* Adjust spacing between list items */
+}
+
+.list-inline-item:last-child {
+  margin-right: 0;
 }
