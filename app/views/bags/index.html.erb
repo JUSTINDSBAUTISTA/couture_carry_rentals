@@ -11,6 +11,18 @@
       <h1><%= bag.brand %></h1>
       </div>
       <% end %>
-    </div>
+  <%= link_to new_bag_path do %>
+    <button>Add your bag</button>
   <% end %>
+ <div class="row">
+    <% @bags.each do |bag| %>
+    <div class="col-4">
+        <div>
+          <%= link_to bag_path(bag) do%>
+            <div class="card-category mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=bag.picture_url%>%>)">
+            </div>
+          <% end %>
+        </div>
+    </div>
+    <% end %>
 </div>

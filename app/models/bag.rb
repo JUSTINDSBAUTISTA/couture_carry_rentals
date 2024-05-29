@@ -1,3 +1,4 @@
 class Bag < ApplicationRecord
-  validates :brand, presence: true
+  CONDITIONS = ['new', 'like-new', 'used']
+  validates :condition, inclusion: { in: CONDITIONS }
 end
