@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :requests, only: [:index, :show]
 
 
+  # i added the route for the overview page
+  get "/about", to: "pages#about", as: :about
+  get "/contact", to: "pages#contact"
   # Defines the root path route ("/")
   # root "posts#index"
 end

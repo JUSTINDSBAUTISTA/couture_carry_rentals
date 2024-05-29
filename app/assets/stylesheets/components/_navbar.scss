@@ -1,12 +1,54 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+.navbar {
+  background-color: #343a40;
+  padding: 10px 0;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .nav-item {
+    margin-right: 15px;
+  }
+
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .nav-link.active {
+    font-weight: bold;
+  }
+
+  .nav-item:last-child {
+    margin-right: 0;
+  }
+
+  .nav-link.sign-up {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+
+    .fas {
+      margin-right: 5px;
+    }
+  }
 }
