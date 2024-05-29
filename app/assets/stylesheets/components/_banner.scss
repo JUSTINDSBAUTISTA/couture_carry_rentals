@@ -1,0 +1,45 @@
+.banner-container {
+    position: relative;
+    display: inline-block; /* Added to make the container size fit content */
+}
+
+.center-top-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+    font-size: 100px; /* Adjust the font size as needed */
+    font-weight: bold; /* You can add other font properties if desired */
+    font-family: 'Playfair Display', serif; /* Add Playfair Display font */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.center-top-text p {
+    margin: 0; /* Remove default margin */
+}
+
+.action-button {
+    background-color: #a0a0a0;
+    color: #606060;
+    border: 2px solid #686869;
+    padding: 10px 60px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.banner-container img {
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 50px;
+    
+}
