@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
-    @bag = Bag.new
+    @bag = Bag.find(params[:bag_id])
   end
 
   def create
