@@ -1,10 +1,13 @@
-<div class="row">
-  <div class="col-6 left-col">
+<div class="row text-center">
+  <div class="col-6 left-col py-5">
     <img src="<%=@bag.picture_url%>" alt="">
   </div>
-  <div class="col-6 right-col">
+  <div class="col-6 right-col py-5">
     <h2><%= @bag.brand %> | <%= @bag.condition %></h2>
     <p><%= @bag.description %></p>
+    <%= link_to  new_bag_request_path(@bag) do %>
+      <button>Rent</button>
+    <% end %>
   </div>
 
 </div>

@@ -1,4 +1,5 @@
 class BagsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @bags = Bag.all
   end
