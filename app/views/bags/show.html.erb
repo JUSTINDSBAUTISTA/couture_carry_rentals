@@ -1,10 +1,9 @@
-<div class="container mt-3">
-    <div class="card" style="width: 250px, margin: 0 auto">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><%= @bag.brand %></h5>
-        <p class="card-text"><%= @bag.description %></p>
-        <a href="#" class="btn btn-primary">Rent</a>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-6 left-col">
+    <h2><%= @bag.brand %> | <%= @bag.condition %></h2>
+  </div>
+  <div class="col-6 right-col">
+    <p><%= @bag.description %></p>
+  </div>
+
 </div>
