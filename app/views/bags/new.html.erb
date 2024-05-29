@@ -6,12 +6,16 @@
       <%= b.text_field :brand, class: "form-control" %>
     </div>
     <div class="col-12 mt-3">
+      <%= b.label :picture_url, class: "form-label" %>
+      <%= b.text_field :picture_url, class: "form-control" %>
+    </div>
+    <div class="col-12 mt-3">
       <%= b.label :description, class: "form-label" %>
       <%= b.text_field :description, class: "form-control" %>
     </div>
     <div class="col-12 mt-3">
       <%= b.label :condition, class: "form-label" %>
-      <%= b.text_field :condition, class: "form-control" %>
+      <%= b.select :condition, Bag::CONDITIONS , class: "form-control" %>
     </div>
     <div class="col-12 mt-3">
       <%= b.submit class: "btn btn-outline-primary" %>

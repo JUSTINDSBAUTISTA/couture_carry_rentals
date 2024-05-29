@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col-6 left-col">
-    <h2><%= @bag.brand %> | <%= @bag.condition %></h2>
+    <img src="<%=@bag.picture_url%>" alt="">
   </div>
   <div class="col-6 right-col">
+    <h2><%= @bag.brand %> | <%= @bag.condition %></h2>
     <p><%= @bag.description %></p>
   </div>
 
