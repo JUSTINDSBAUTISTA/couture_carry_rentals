@@ -7,10 +7,14 @@ class BagsController < ApplicationController
       @bags = Bag.all
     end
     if params[:query].present?
-      @bags = Bag.search_by_brand(params[:query])
+      @bags = @bags.search_by_brand(params[:query])
     else
-      @bags = Bag.all
+      @bags = @bags.all
     end
+  end
+
+  def your_bags
+    @bags = Bag.where(user_id: current_user.id)
   end
 
   def show

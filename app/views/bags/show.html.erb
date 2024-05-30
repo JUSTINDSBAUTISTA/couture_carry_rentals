@@ -3,16 +3,14 @@
     <img src="<%= @bag.picture_url %>" alt="" style="max-width: 100%; max-height: 600px; object-fit: contain;">
   </div>
 
-  <div class="col-6 right-col py-5">
-    <p><strong>Brand:</strong>  <%= @bag.brand.capitalize %></p>
-    <p><strong>Condition:</strong> <%= @bag.condition.capitalize %></p>
-    <p><strong>Description:</strong> <%= @bag.description.capitalize %></p>
-    <p><strong>Price / day:</strong> $<%= @bag.price_per_day %> </p>
-
+  <div class="col-6 right-col mt-5">
+      <p class="m-0"><strong>Condition:</strong> <%= @bag.condition.capitalize %></p>
+      <p class="m-0"><strong>Description:</strong> <%= @bag.description.capitalize %></p>
+      <p class="m-0"><strong>Price / day:</strong> $<%= @bag.price_per_day %> </p>
     <%= simple_form_for [@bag, @request] do |f| %>
       <%= f.input :start_date, html5: true %>
       <%= f.input :end_date, html5: true  %>
-      <%= f.submit "Confirm your order", class: "btn btn-secondary mx-5" %>
+      <%= f.submit "Confirm your order", class: "btn btn-secondary" %>
     <% end %>
 
   </div>
