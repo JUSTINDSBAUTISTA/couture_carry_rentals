@@ -10,6 +10,7 @@ class BagsController < ApplicationController
 
   def show
     @bag = Bag.find(params[:id])
+    @request = Request.new
   end
 
   def new
