@@ -1,7 +1,11 @@
 class BagsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @bags = Bag.all
+    if current_user
+      @bags = Bag.where.not(user_id: current_user.id)
+    else
+      @bags = Bag.all
+    end
   end
 
   def show
@@ -14,9 +18,12 @@ class BagsController < ApplicationController
 
   def create
     @bag = Bag.new(bag_params)
-    @bag.save
-
-    redirect_to bag_path(@bag)
+    @bag.user = current_user
+    if @bag.save
+      redirect_to bag_path(@bag)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

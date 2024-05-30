@@ -1,13 +1,14 @@
 <%= link_to new_bag_path do %>
   <button class="button-89" role="button"> List Your Bag </button>
-  
+
 <% end %>
 <div class="row">
     <% @bags.each do |bag| %>
     <div class="col-4">
         <div>
-          <%= link_to bag_path(bag) do%>
+          <%= link_to bag_path(bag), class: "text-decoration-none" do%>
             <div class="card-category my-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=bag.picture_url%>)">
+              <h3><%= bag.brand %></h3>
             </div>
           <% end %>
         </div>
