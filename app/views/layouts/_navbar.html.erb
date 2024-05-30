@@ -12,13 +12,13 @@
     <a class="navbar-item" href="/" style="color: black;">
       Home
     </a>
-    
+
     <a class="navbar-item" href="/bags/new" style="color: black;">
       Become a lender
     </a>
 
     <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link" style="color: black;">
+      <a class="navbar-link text-decoration-none" style="color: black;">
         More
       </a>
 
@@ -37,13 +37,12 @@
   <div class="navbar-end">
     <div class="navbar-item">
       <div class="buttons">
-     <% if user_signed_in? %>
-      <%= link_to "Log out", destroy_user_session_path, class: "navbar-item dropdown-item", data: { turbo_method: :delete } %>
-
-     <% else %>
-    <%= link_to('Log in', new_user_session_path, class: 'button is-light') %>
-     <%= link_to('Sign up', new_user_registration_path, class: 'button is-primary') %>
-       <% end %>
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, class: "navbar-item dropdown-item", data: { turbo_method: :delete } %>
+        <% else %>
+        <%= link_to('Log in', new_user_session_path, class: 'button is-light text-decoration-none')%>
+        <%= link_to('Sign up', new_user_registration_path, class: 'button is-primary text-decoration-none') %>
+        <% end %>
       </div>
     </div>
   </div>

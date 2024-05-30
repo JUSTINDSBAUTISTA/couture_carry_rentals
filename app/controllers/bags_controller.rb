@@ -30,7 +30,7 @@ class BagsController < ApplicationController
     @bag = Bag.new(bag_params)
     @bag.user = current_user
     if @bag.save
-      redirect_to bag_path(@bag)
+      redirect_to your_bags_path
     else
       render :new, status: :unprocessable_entity
     end
