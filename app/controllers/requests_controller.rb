@@ -15,18 +15,21 @@ class RequestsController < ApplicationController
   end
 
   def create
+    @request = Request.new(request_params)
+    @request.status = "pending"
     @bag = Bag.find(params[:bag_id])
-    @request = @bag.requests.build(request_params)
+    @request.bag = @bag
+    @request.user = current_user
     if @request.save
-      redirect_to @request
+      redirect_to requests_path, notice: "Request was successfully created!"
     else
-      render 'new'
+      render "bags/show", status: :unprocessable_entity
     end
   end
 
   private
 
   def request_params
-    params.require(:request).permit(:status)
+    params.require(:request).permit(:start_date, :end_date)
   end
 end
