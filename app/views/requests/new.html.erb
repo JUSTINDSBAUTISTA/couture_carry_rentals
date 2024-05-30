@@ -1,34 +1,11 @@
-<div class="container d-flex justify-content-center align-items-center mt-5 mb-5 pb-5">
-  <div class="card custom-card">
+<div class="container d-flex justify-content-center align-items-center mt-5 pb-5">
+  <div class="card custom-card text-center">
     <div class="card-body custom-card-body">
       <%= link_to requests_path do %>
-        <button class="button-89" role="button">Confirm your Request</button>
+        <button class="button-89" role="button">Checkout</button>
       <% end %>
     </div>
     <img class="card-img-top" src="<%=@bag.picture_url%>" alt="Card image cap" >
-    <div class="card-body">
-      <p class="card-text"></p>
-    </div>
+    <p class="card-text m-0 pt-3">$<%= @bag.price_per_day %> / day</p>
   </div>
 </div>
-<style>
-
-  .custom-card {
-  height: 550px;
-  width: 350px;
-  position: relative;
-}
-
-.custom-card-body {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-</style>
