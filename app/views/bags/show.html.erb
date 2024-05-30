@@ -3,15 +3,16 @@
     <img src="<%= @bag.picture_url %>" alt="" style="max-width: 100%; max-height: 600px; object-fit: contain;">
   </div>
 
-  <div class="col-6 right-col mt-5">
-      <p class="m-0"><strong>Condition:</strong> <%= @bag.condition.capitalize %></p>
-      <p class="m-0"><strong>Description:</strong> <%= @bag.description.capitalize %></p>
-      <p class="m-0"><strong>Price / day:</strong> $<%= @bag.price_per_day %> </p>
-    <%= simple_form_for [@bag, @request] do |f| %>
-      <%= f.input :start_date, html5: true %>
-      <%= f.input :end_date, html5: true  %>
-      <%= f.submit "Confirm your order", class: "btn btn-secondary" %>
-    <% end %>
+  <div class="col-6 right-col py-5">
+    <h2 class="brand"><%= @bag.brand.capitalize %></h2>
+    <p class="condition"><strong>Condition:</strong> <%= @bag.condition.capitalize %></p>
+    <p class="description"><strong>Description:</strong> <%= @bag.description.capitalize %></p>
+    <p class="price"><strong>Price / day:</strong> $<%= @bag.price_per_day %> </p>
 
+    <%= simple_form_for [@bag, @request] do |f| %>
+      <%= f.input :start_date, html5: true, label: "Start Date", class: "form-control" %>
+      <%= f.input :end_date, html5: true, label: "End Date", class: "form-control" %>
+      <%= f.submit "Confirm your order", class: "btn btn-secondary mt-3" %>
+    <% end %>
   </div>
 </div>
