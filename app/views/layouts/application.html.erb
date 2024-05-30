@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
                 
 	
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-
+  
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <%= javascript_include_tag 'search' %>
     <%= render 'layouts/navbar'%>
     <div class="content-wrapper">
       <%= yield %>

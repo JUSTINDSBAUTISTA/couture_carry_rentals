@@ -1,17 +1,51 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="<%= root_path %>">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARQAAAC3CAMAAADkUVG/AAAAhFBMVEX/zs7///8AAAD/y8v/+/v/4ODt7e37+/vw8PD39/fk5OSMjIyysrLS0tLW1taCgoKenp7c3Ny1tbV1dXVqamokJCTMzMyTk5OoqKjDw8NDQ0MRERHh4eFwcHDIyMhkZGQdHR0yMjJOTk5cXFw9PT1WVlaNjY0sLCwgICCZmZkWFhaEhIQKnMhYAAAEPElEQVR4nO2da3eiSBBAB2eHh6IgGsEHOkad2Yz////tWoWJpsszmNmzEbj3C6EOfuib6qa7uj1++QIAAAAAAAAAAAAAAAAAAAAAAAAAALf4+ml8dstv883765PwHtfKN+/TeFgpX5FigBQDpBggxQApBkgxQIoBUgyQ4sLkzQIpBkgxQIoBUgyQYoAUA6QYIMWFyZsFUgyQYoAUF8YUi/ukBP46i7O1/z4eDrM4nvejDkqZTb73lJ/H8C3cH2yr8HI66piU/qJ3weIcDiaX4Z6TRK2WMr9qe29/VvX9Ot7vkpRXJ0/bp9Ol1LC/rMK/tj/lEnRIiq9N383kbpT09A9Pu9Q2kyGmny4H9Z00X8qzND5+H04lPLnDRIukDG0ngYSnH3PyuFJqTt52duMLeQ/fMYw0Q0q9TAlvvFikUxUfdNJ0Kdmp8c83XN03jW2PlMTOCHG1+6iTpkuRKcjYCQ9O4bSjUoIb3eRwCs86KmUlM1k3vr1zXt8qKSN7nA1k2fNhJw2XMrtY7FygU/+uSpG3TOKE+22VUmtGG58a/8OW8ncLpdTKlMJ+9fZvjL8dkpJ3R0qt7iNjilspESnLFkqplSlzu2jS7bfP0F7jhJ2WMpaSoxuXJVHoxjshxb8xeEiB9p6dnjZJ8Zb2Iqc8hbOuSpEK29wJF39QtW6+lBe79aM/m6g0XMrIfs9onWXYOin1qvlaJHB2OHRQ+XA98mGl1Nz3kcKju3mu20HuYNMNKTpPWzg7PHoGw6nejtbrGgW5pkvxcmn9r3V1uyq1vKKp8lroj/LnUyV3UG+oabyUaie99zSIsyLfvk7aVFavlxRZ/LKrFtMTewRqn5Ro37umqq8k78KLLknxgul1689dJr0ObzolxfNmh4vGv7yG/cvzXdPoLOX30/9WSPm3/dnxsNgvdvn66j0UzfPNYr8/JHp2x/Pz5Pj7RGmLlP+Wh5XC4WILpBggxYXuY4EUA6QYIMUAKQZIceHtY4EUA6S4GN1HV7rVMjgMLoOR8eD5Uj0YhefNZQkE54eMLeeHleJkir/RQkipNfpNImXHH6nUZONh8lYzmBTS0E0q5aZxHMoBsNlBPliM13LANk3lXMu4NEr+zZESVxvmpZYbE73Ph3pm5/mtbdFRLqvUKyspetZJz8bF45lIKfSD42TVaCm6XzEu9dzsZiLpkGs6eMe3DhSppnFRSckilaLheFVJedE8GhhbHs2R0p9KMuR+ISlS6v9/EOiXfZKLoWESy+bYJpac8iep9rtq72NwlNxII1VWrj2H5kjxQmlq5AWBXqOLy/VIu9KhtOoYYZUL1SO+bicG1b1vfDW3QVL+P5CCFKS0TwoLQgukGCDFACkGSDFAigFSDJBigBQXJm8WSDFAigvdxwIpBkgxQIoBUgz4HUILfrESAAAAAAAAAAAAAAAAAAAAAAAAAOAB+Qdnj1vWtUKtiwAAAABJRU5ErkJggg==" alt="Logo" style="height: 50px; width: auto; border-radius: 5px;">
-      <span class="ml-2" style="font-weight: bold; font-size: 20px; color: #ffffff;">CoutureCarry</span>
+<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: white;">
+  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+</div>
+
+<div id="navbarBasicExample" class="navbar-menu" style="background-color: white;">
+  <div class="navbar-start">
+    <a class="navbar-item" href="/" style="color: black;">
+      Home
     </a>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="/bags/new">List your bag</a></li>
-        <li class="nav-item"><%= link_to "Contact", contact_path, class: "nav-link" %></li>
-        <li class="nav-item"><a class="nav-link" href="<%= new_user_registration_path %>"><i class="fas fa-user"></i> Sign Up</a></li>
-      </ul>
+    
+    <a class="navbar-item" href="/bags/new" style="color: black;">
+      Become a lender
+    </a>
+
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link" style="color: black;">
+        More
+      </a>
+
+      <div class="navbar-dropdown">
+        <a class="navbar-item" href="/about" style="color: black;">
+          About
+        </a>
+
+        <a class="navbar-item" href="/contact" style="color: black;">
+          Contact
+        </a>
+      </div>
     </div>
   </div>
+
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="buttons">
+     <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, class: "navbar-item dropdown-item", data: { turbo_method: :delete } %>
+
+     <% else %>
+    <%= link_to('Log in', new_user_session_path, class: 'button is-light') %>
+     <%= link_to('Sign up', new_user_registration_path, class: 'button is-primary') %>
+       <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 </nav>
