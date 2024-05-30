@@ -25,7 +25,7 @@
         <div>
           <%= link_to bag_path(bag), class: "text-decoration-none" do%>
             <div class="card-category my-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=bag.picture_url%>)">
-              <h3><%= bag.brand %></h3>
+              <h3><%= bag.brand.capitalize %></h3>
             </div>
           <% end %>
         </div>
