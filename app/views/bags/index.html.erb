@@ -1,11 +1,19 @@
-<%= link_to new_bag_path do %>
-  <button class="button-89" role="button"> List Your Bag </button>
+<div class="d-flex flex-row bd-highlight mb-3">
+  <div class="p-2 bd-highlight">
+    <%= link_to new_bag_path do %>
+      <button class="button-89" role="button" style="color: #636363"> List Your Bag </button>
+    <% end %>
+  </div>
+  <div class="p-2 bd-highlight">
+    <%= link_to your_bags_path do %>
+      <button class="button-89" role="button" style="color: #01204E"> Your Bags </button>
+    <% end %>
+  </div>
+</div>
 
-<% end %>
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
-    <%= form_with url: bags_path, method: :get, class:
-    "d-flex" do %>
+    <%= form_with url: bags_path, method: :get, class:"d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
@@ -15,9 +23,6 @@
     <% end %>
   </div>
 </div>
-
-
-
 
 <div class="row">
     <% @bags.each do |bag| %>
