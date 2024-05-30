@@ -6,10 +6,16 @@ class BagsController < ApplicationController
     else
       @bags = Bag.all
     end
+    if params[:query].present?
+      @bags = Bag.search_by_brand(params[:query])
+    else
+      @bags = Bag.all
+    end
   end
 
   def show
     @bag = Bag.find(params[:id])
+    @request = Request.new
   end
 
   def new

@@ -1,8 +1,36 @@
 .left-col {
-  background-color: #D1D1D1;
-  padding: 25px;
+  background-color: #f9f9f9;
+  padding: 20px;
 }
+
 .right-col {
-  background-color: #DBDBDB;
-  padding: 25px;
+  background-color: #fff;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+}
+
+.right-col h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.right-col p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.status-link {
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
 }

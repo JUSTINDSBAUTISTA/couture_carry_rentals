@@ -1,54 +1,19 @@
-<div class="row text-center">
-  <div class="col-6 left-col py-5">
+<div class="row">
+  <div class="col-6 left-col py-5 text-center">
     <img src="<%= @bag.picture_url %>" alt="" style="max-width: 100%; max-height: 600px; object-fit: contain;">
   </div>
 
   <div class="col-6 right-col py-5">
-     <p><strong>User name:</strong> <%= @user ? @user.id : '' %></p> 
-     <p><strong>Brand:</strong>  <%= @bag.brand %></p> 
-    <p><strong>Condition:</strong> <%= @bag.condition %></p>
-    <p><strong>description:</strong> <%= @bag.description %></p>
-    <%= link_to new_bag_request_path(@bag), class: "status-link" do %>
-    <button class="btn btn-secondary">Request Received, check your status!</button>
+    <p><strong>Brand:</strong>  <%= @bag.brand.capitalize %></p>
+    <p><strong>Condition:</strong> <%= @bag.condition.capitalize %></p>
+    <p><strong>Description:</strong> <%= @bag.description.capitalize %></p>
+    <p><strong>Price / day:</strong> $<%= @bag.price_per_day %> </p>
+
+    <%= simple_form_for [@bag, @request] do |f| %>
+      <%= f.input :start_date, html5: true %>
+      <%= f.input :end_date, html5: true  %>
+      <%= f.submit "Confirm your order", class: "btn btn-secondary mx-5" %>
     <% end %>
+
   </div>
 </div>
-
-<style>
-  .left-col {
-    background-color: #f9f9f9;
-    padding: 20px;
-  }
-
-  .right-col {
-    background-color: #fff;
-    padding: 20px;
-    border-left: 1px solid #ddd;
-  }
-
-  .right-col h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .right-col p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 15px;
-  }
-
-  .status-link {
-    text-decoration: none;
-  }
-
-  .btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    transition: background-color 0.3s;
-  }
-
-  .btn-secondary:hover {
-    background-color: #5a6268;
-    border-color: #545b62;
-  }
-</style>
