@@ -36,6 +36,7 @@
 .card-text {
     font-size: 16px;
     color: #555;
+    margin-bottom: 0;
 }
 
 .text-muted {
@@ -58,7 +59,7 @@
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color: rgb(25, 25, 25);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
