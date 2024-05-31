@@ -1,4 +1,26 @@
 <div class="container">
+  <div class="d-flex flex-row justify-content-between mb-3">
+    <div class="p-2">
+      <%= link_to new_bag_path, class: "btn btn-dark" do %>
+        Add More 
+      <% end %>
+    </div>
+ 
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: bags_path, method: :get, class:"d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control mr-2",
+              placeholder: "Search for bag"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+  </div>
+
 <h2 class="my-4 opacity-50">Your bags</h2>
 <%# If your bag is empty, this will print %>
 <% if @bags.empty? %>
@@ -35,7 +57,7 @@
     </div>
   <% end %>
 <% end %>
-
+</div>
 
 <style>
 a{
