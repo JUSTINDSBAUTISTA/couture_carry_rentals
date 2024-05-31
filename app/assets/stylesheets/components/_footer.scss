@@ -1,30 +1,101 @@
-.bg-light-pink {
-  background-color: #f4d2d2; /* Light pink color */
+/* Colors */
+$dark-navy: #2c3e50; /* Dark Navy color */
+$gold: #f8c10e; /* Gold color */
+$white: #ffffff; /* White color */
+$light-gray: #ecf0f1; /* Light Gray color */
+
+.bg-dark-navy {
+  background-color: $dark-navy; /* Dark Navy background */
 }
 
 .footer {
-  background-color: #636363;
-  color: white;
-  padding: 15px 0; /* Adjust padding as needed */
-  position: relative;
+  background-color: $dark-navy; /* Dark Navy color */
+  color: $light-gray; /* Light Gray text color */
+  padding: 20px 0; /* Adjust padding */
   width: 100%;
+  text-align: center; /* Center content */
+  font-family: 'Arial', sans-serif; /* Elegant font */
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px; /* Base font size */
 }
 
 .container {
   max-width: 1200px; /* Adjust as needed */
   margin: 0 auto;
+  padding: 0 15px; /* Padding to ensure content doesn't touch edges */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .list-inline {
   list-style-type: none;
   padding: 0;
+  margin: 10px 0 0 0; /* Reduced margin to tighten spacing */
 }
 
 .list-inline-item {
   display: inline-block;
-  margin-right: 10px; /* Adjust spacing between list items */
+  margin-right: 15px; /* Adjust spacing between list items */
+  font-size: 14px; /* Base font size */
+}
+
+.list-inline-item a {
+  color: $light-gray; /* Light Gray color for links */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+.list-inline-item a:hover {
+  color: $gold; /* Gold color on hover */
 }
 
 .list-inline-item:last-child {
   margin-right: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 0; /* Reduce padding for smaller screens */
+  }
+
+  .footer p {
+    font-size: 12px; /* Smaller font size for smaller screens */
+  }
+
+  .list-inline-item {
+    font-size: 12px; /* Smaller font size for list items */
+    margin-right: 10px; /* Reduce spacing between list items */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px 0; /* Further reduce padding for very small screens */
+  }
+
+  .footer p {
+    font-size: 10px; /* Even smaller font size for very small screens */
+  }
+
+  .footer-content {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .list-inline-item {
+    display: block; /* Stack items vertically */
+    margin-right: 0;
+    margin-bottom: 5px; /* Add spacing between stacked items */
+  }
+
+  .list-inline-item:last-child {
+    margin-bottom: 0;
+  }
 }
