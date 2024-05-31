@@ -27,21 +27,32 @@
           Contact
         </a>
       </div>
+
     </div>
   </div>
-    <a class="navbar-item couturecarry" href="#" style="color: black;">
+   <a class="navbar-item couturecarry" href="#" style="color: black;">
     CoutureCarry
   </a>
   <div class="navbar-end">
-    <div class="navbar-item">
-      <div class="buttons">
-        <% if user_signed_in? %>
-          <%= link_to "Log out", destroy_user_session_path, class: "navbar-item dropdown-item", data: { turbo_method: :delete } %>
-        <% else %>
+      <% if user_signed_in? %>
+      <div class="navbar-item">
+      <%= link_to your_bags_path do %>
+        <button type="button" class="btn btn-primary position-relative mx-5">
+          Requests
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            <%= current_user.requests_as_owner.where(status: "pending").count %>
+            <span class="visually-hidden">unread requests</span>
+          </span>
+        </button>
+      <% end %>
+        <%= link_to "Log out", destroy_user_session_path, class: "navbar-item dropdown-item", data: { turbo_method: :delete } %>
+      </div>
+      <% else %>
+      <div class="navbar-item">
         <%= link_to('Log in', new_user_session_path, class: 'button is-light text-decoration-none')%>
         <%= link_to('Sign up', new_user_registration_path, class: 'button is-primary text-decoration-none') %>
-        <% end %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

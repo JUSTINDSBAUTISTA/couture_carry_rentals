@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" style="width: 900px">
   <div class="d-flex flex-row justify-content-between mb-3">
     <div class="p-2">
       <%= link_to new_bag_path, class: "btn btn-dark" do %>
-        Add More 
+        Add More
       <% end %>
     </div>
   </div>
@@ -17,6 +17,7 @@
     <% end %>
   </div>
 <% else %>
+  
 <%# This is our cards for the bags  %>
 
   <% @bags.each do |bag| %>
@@ -27,19 +28,21 @@
         <p><%= bag.description %></p>
       </div>
     </div>
-    <div>
-      
     <div class="text-start bg-light bg-gradient">
       <p class="ml-0" style= "font-size: 30px"><%= bag.brand %> has "<%= bag.requests.length %>" pending requests:</p>
-        <% bag.requests.each do |request| %>
-        <div class="d-flex bd-highlight">
-          <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size: 20px" class="opacity-50"><%= request.status.capitalize %></p></div>
-          <div class="p-2 bd-highlight"><a href="#" class="accept">ACCEPT <span class="fa fa-check"></span></a></div>
-          <div class="p-2 bd-highlight"> <a href="#" class="deny">REJECT <span class="fa fa-close"></span></a></div>
-        </div>
+        <% bag.requests.order(id: :desc).each do |request| %>
+          <div class="d-flex bd-highlight">
+            <div class="p-2 flex-grow-1 bd-highlight">
+              <p style="font-size: 20px" class="opacity-50"><%= request.status.capitalize %></p>
+            </div>
+            <%= button_to request_path(request), method: :patch, params: { request: { status: "approved" } }, class: "btn btn-success m-2 text-light" do %>
+              <div class="p-2 bd-highlight">ACCEPT <span class="fa fa-check"></span></div>
+            <% end %>
+            <%= button_to request_path(request), method: :patch, params: { request: { status: "rejected" } }, class: "btn btn-danger m-2 text-light" do %>
+              <div class="p-2 bd-highlight">REJECT <span class="fa fa-check"></span></div>
+            <% end %>
+          </div>
         <% end %>
-    </div>
-
     </div>
   <% end %>
 <% end %>

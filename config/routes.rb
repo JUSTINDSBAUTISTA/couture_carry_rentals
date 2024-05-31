@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :bags, only: [:index, :show, :new, :create] do
     resources :requests, only: [:new, :create]
   end
-  resources :requests, only: [:index, :show]
+  resources :requests, only: [:index, :show, :update]
 
   # i added the route for the overview page
   get "/your_bags", to: "bags#your_bags"
