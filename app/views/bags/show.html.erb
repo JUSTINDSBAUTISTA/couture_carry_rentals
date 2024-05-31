@@ -9,10 +9,47 @@
     <p class="description"><strong>Description:</strong> <%= @bag.description.capitalize %></p>
     <p class="price"><strong>Price / day:</strong> $<%= @bag.price_per_day %> </p>
 
-    <%= simple_form_for [@bag, @request] do |f| %>
+    <%= simple_form_for [@bag, @request], html: { id: "request-form" } do |f| %>
       <%= f.input :start_date, html5: true, label: "Start Date", class: "form-control" %>
       <%= f.input :end_date, html5: true, label: "End Date", class: "form-control" %>
-      <%= f.submit "Confirm your order", class: "btn btn-secondary mt-3" %>
+      <%= button_tag "Confirm your order", type: "button", class: "btn btn-secondary mt-3", id: "confirm-button" %>
     <% end %>
   </div>
 </div>
+
+<!-- Modal -->
+<%= render "bags/modal" %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const confirmButton = document.getElementById("confirm-button");
+    const finalSubmitButton = document.getElementById("final-submit-button");
+    const startDateInput = document.getElementById("request_start_date");
+    const endDateInput = document.getElementById("request_end_date");
+    const modalStartDate = document.getElementById("modal-start-date");
+    const modalEndDate = document.getElementById("modal-end-date");
+    const modalTotalPrice = document.getElementById("modal-total-price");
+
+    const pricePerDay = <%= @bag.price_per_day %>;
+
+    confirmButton.addEventListener("click", function() {
+      const startDate = new Date(startDateInput.value);
+      const endDate = new Date(endDateInput.value);
+      const timeDiff = endDate - startDate;
+      const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      const totalPrice = daysDiff * pricePerDay;
+
+      modalStartDate.textContent = startDateInput.value;
+      modalEndDate.textContent = endDateInput.value;
+      modalTotalPrice.textContent = totalPrice;
+
+      // Show the modal
+      const confirmationModal = new bootstrap.Modal(document.getElementById("confirmationModal"));
+      confirmationModal.show();
+    });
+
+    finalSubmitButton.addEventListener("click", function() {
+      document.getElementById("request-form").submit();
+    });
+  });
+</script>
