@@ -1,26 +1,27 @@
-<h2 class="text-center mt-4">Your bags</h2>
-<%# If your bag is empty, this will print %>
-<% if @bags.empty? %>
-  <p class="text-center m-0 opacity-25"> Your bag is empty </p>
-  <div class="d-flex justify-content-center">
-<%# Redirect to create new bag  %>
-    <%= link_to new_bag_path do %>
-      <button type="button" class="btn btn-primary">Add Bag</button>
-    <% end %>
-  </div>
-<% else %>
-<%# This is our cards for the bags  %>
-<div class="row">
-  <% @bags.each do |bag| %>
-    <div class="col-4">
-      <div>
-        <%= link_to bag_path(bag), class: "text-decoration-none" do %>
-          <div class="card-category my-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=bag.picture_url%>)">
-            <h3><%= bag.brand.capitalize %></h3>
-          </div>
-        <% end %>
-      </div>
+<div class="container">
+  <div class="d-flex flex-row justify-content-between mb-3">
+    <div class="p-2">
+      <%= link_to new_bag_path, class: "btn btn-dark" do %>
+        Add More 
+      <% end %>
     </div>
-  <% end %>
-<% end %>
+ 
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: bags_path, method: :get, class:"d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control mr-2",
+              placeholder: "Search for bag"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+  </div>
+
+ 
 </div>
+
+
