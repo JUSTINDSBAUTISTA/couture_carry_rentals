@@ -2,14 +2,6 @@
   <div class="col-6 left-col">
     <img src="<%=@bag.picture_url%>" style="width:50%, height: 50%, padding: 25px"  alt="">
   </div>
-  <div class="col-6 right-col">
-    <h2><%= @bag.brand %> | <%= @bag.condition %></h2>
-    <p><%= @bag.description %></p>
-
-  <div class="col-6 left-col py-5 text-center">
-    <img src="<%= @bag.picture_url %>" alt="" style="max-width: 100%; max-height: 600px; object-fit: contain;">
-  </div>
-
   <div class="col-6 right-col py-5">
     <h2 class="brand"><%= @bag.brand.capitalize %></h2>
     <p class="condition"><strong>Condition:</strong> <%= @bag.condition.capitalize %></p>
