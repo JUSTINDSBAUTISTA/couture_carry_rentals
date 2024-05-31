@@ -1,0 +1,93 @@
+.navbar {
+  background-color: #2c3e50;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-item {
+  font-size: 16px;
+  font-weight: normal;
+  color: #0e0d0d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-radius: 5px;
+
+  &:hover {
+    color: #02111b;
+  }
+}
+
+.navbar-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; // Added transform for smooth hover effect
+
+  &:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+  }
+}
+
+.navbar-dropdown {
+  background-color: #ecf0f1;
+}
+
+.navbar-dropdown a.navbar-item {
+  font-size: 16px;
+  font-weight: normal;
+  color: #333;
+  text-decoration: none;
+}
+
+.buttons .button {
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #f39c12;
+  }
+}
+
+.navbar-item {
+  text-decoration: none;
+}
+
+
+.navbar-item[href="/"] {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-item {
+  font-size: 16px;
+  font-weight: normal;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: #3498db;
+}
+
+.couturecarry {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: -5px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-decoration-style: solid;
+  color: #333;
+}

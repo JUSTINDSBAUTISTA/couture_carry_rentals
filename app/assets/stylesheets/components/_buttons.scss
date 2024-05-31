@@ -1,7 +1,7 @@
 .return-button {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  font-size: 20px; /* Adjust size as needed */
+  font-size: 20px;
   margin-left: 10px;
 }
 
@@ -9,11 +9,9 @@
   text-decoration: underline;
 }
 
-
-/* CSS */
 .button-89 {
---b: 3px;   /* border thickness */
---s: .45em; /* size of the corner */
+--b: 3px;
+--s: .45em;
 --color: #373B44;
 
 padding: calc(.5em + var(--s)) calc(.9em + var(--s));

@@ -1,31 +1,30 @@
-/* Colors */
-$dark-navy: #2c3e50; /* Dark Navy color */
-$gold: #f8c10e; /* Gold color */
-$white: #ffffff; /* White color */
-$light-gray: #ecf0f1; /* Light Gray color */
+$dark-navy: #2c3e50;
+$gold: #f8c10e;
+$white: #ffffff;
+$light-gray: #ecf0f1;
 
 .bg-dark-navy {
-  background-color: $dark-navy; /* Dark Navy background */
+  background-color: $dark-navy;
 }
 
 .footer {
-  background-color: $dark-navy; /* Dark Navy color */
-  color: $light-gray; /* Light Gray text color */
-  padding: 20px 0; /* Adjust padding */
+  background-color: $dark-navy;
+  color: $light-gray;
+  padding: 20px 0;
   width: 100%;
-  text-align: center; /* Center content */
-  font-family: 'Arial', sans-serif; /* Elegant font */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
 }
 
 .footer p {
   margin: 0;
-  font-size: 14px; /* Base font size */
+  font-size: 14px;
 }
 
 .container {
-  max-width: 1200px; /* Adjust as needed */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px; /* Padding to ensure content doesn't touch edges */
+  padding: 0 15px;
 }
 
 .footer-content {
@@ -37,62 +36,62 @@ $light-gray: #ecf0f1; /* Light Gray color */
 .list-inline {
   list-style-type: none;
   padding: 0;
-  margin: 10px 0 0 0; /* Reduced margin to tighten spacing */
+  margin: 10px 0 0 0;
 }
 
 .list-inline-item {
   display: inline-block;
-  margin-right: 15px; /* Adjust spacing between list items */
-  font-size: 14px; /* Base font size */
+  margin-right: 15px;
+  font-size: 14px;
 }
 
 .list-inline-item a {
-  color: $light-gray; /* Light Gray color for links */
+  color: $light-gray;
   text-decoration: none;
-  transition: color 0.3s ease; /* Smooth transition for link color */
+  transition: color 0.3s ease;
 }
 
 .list-inline-item a:hover {
-  color: $gold; /* Gold color on hover */
+  color: $gold;
 }
 
 .list-inline-item:last-child {
   margin-right: 0;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .footer {
-    padding: 15px 0; /* Reduce padding for smaller screens */
+    padding: 15px 0;
   }
 
   .footer p {
-    font-size: 12px; /* Smaller font size for smaller screens */
+    font-size: 12px;
   }
 
   .list-inline-item {
-    font-size: 12px; /* Smaller font size for list items */
-    margin-right: 10px; /* Reduce spacing between list items */
+    font-size: 12px;
+    margin-right: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 10px 0; /* Further reduce padding for very small screens */
+    padding: 10px 0;
   }
 
   .footer p {
-    font-size: 10px; /* Even smaller font size for very small screens */
+    font-size: 10px;
   }
 
   .footer-content {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
   }
 
   .list-inline-item {
-    display: block; /* Stack items vertically */
+    display: block;
     margin-right: 0;
-    margin-bottom: 5px; /* Add spacing between stacked items */
+    margin-bottom: 5px;
   }
 
   .list-inline-item:last-child {
