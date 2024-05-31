@@ -1,4 +1,11 @@
 <div class="row">
+  <div class="col-6 left-col">
+    <img src="<%=@bag.picture_url%>" style="width:50%, height: 50%, padding: 25px"  alt="">
+  </div>
+  <div class="col-6 right-col">
+    <h2><%= @bag.brand %> | <%= @bag.condition %></h2>
+    <p><%= @bag.description %></p>
+
   <div class="col-6 left-col py-5 text-center">
     <img src="<%= @bag.picture_url %>" alt="" style="max-width: 100%; max-height: 600px; object-fit: contain;">
   </div>
@@ -9,10 +16,63 @@
     <p class="description"><strong>Description:</strong> <%= @bag.description.capitalize %></p>
     <p class="price"><strong>Price / day:</strong> $<%= @bag.price_per_day %> </p>
 
-    <%= simple_form_for [@bag, @request] do |f| %>
+    <%= simple_form_for [@bag, @request], html: { id: "request-form" } do |f| %>
       <%= f.input :start_date, html5: true, label: "Start Date", class: "form-control" %>
       <%= f.input :end_date, html5: true, label: "End Date", class: "form-control" %>
-      <%= f.submit "Confirm your order", class: "btn btn-secondary mt-3" %>
+      <%= button_tag "Confirm your order", type: "button", class: "btn btn-secondary", id: "confirm-button" %>
     <% end %>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationModalLabel">Confirm Your Order</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Start Date:</strong> <span id="modal-start-date"></span></p>
+        <p><strong>End Date:</strong> <span id="modal-end-date"></span></p>
+        <p><strong>Total Price:</strong> $<span id="modal-total-price"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="final-submit-button">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    const confirmButton = document.getElementById("confirm-button");
+    const finalSubmitButton = document.getElementById("final-submit-button");
+    const startDateInput = document.getElementById("request_start_date");
+    const endDateInput = document.getElementById("request_end_date");
+    const modalStartDate = document.getElementById("modal-start-date");
+    const modalEndDate = document.getElementById("modal-end-date");
+    const modalTotalPrice = document.getElementById("modal-total-price");
+
+    const pricePerDay = <%= @bag.price_per_day %>;
+
+    confirmButton.addEventListener("click", function() {
+      const startDate = new Date(startDateInput.value);
+      const endDate = new Date(endDateInput.value);
+      const timeDiff = endDate - startDate;
+      const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      const totalPrice = daysDiff * pricePerDay;
+
+      modalStartDate.textContent = startDateInput.value;
+      modalEndDate.textContent = endDateInput.value;
+      modalTotalPrice.textContent = totalPrice;
+
+      // Show the modal
+      const confirmationModal = new bootstrap.Modal(document.getElementById("confirmationModal"));
+      confirmationModal.show();
+    });
+
+    finalSubmitButton.addEventListener("click", function() {
+      document.getElementById("request-form").submit();
+    });
+</script>

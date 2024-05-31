@@ -21,7 +21,66 @@
     </div>
   </div>
 
- 
+<h2 class="my-4 opacity-50">Your bags</h2>
+<%# If your bag is empty, this will print %>
+<% if @bags.empty? %>
+  <p class="text-center m-0 opacity-25"> Your bag is empty </p>
+  <div class="d-flex justify-content-center">
+<%# Redirect to create new bag  %>
+    <%= link_to new_bag_path do %>
+      <button type="button" class="btn btn-primary">Add Bag</button>
+    <% end %>
+  </div>
+<% else %>
+<%# This is our cards for the bags  %>
+
+  <% @bags.each do |bag| %>
+    <div class="request-product my-3  ">
+      <img src="<%= bag.picture_url %>" />
+      <div class="request-product-infos">
+        <h2><%= bag.brand %></h2>
+        <p><%= bag.description %></p>
+      </div>
+    </div>
+    <div>
+    <div class="text-start bg-light bg-gradient">
+      <p class="ml-0" style= "font-size: 30px"><%= bag.brand %> has "<%= bag.requests.length %>" pending requests:</p>
+        <% bag.requests.each do |request| %>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size: 20px" class="opacity-50"><%= request.status.capitalize %></p></div>
+          <div class="p-2 bd-highlight"><a href="#" class="accept">ACCEPT <span class="fa fa-check"></span></a></div>
+          <div class="p-2 bd-highlight"> <a href="#" class="deny">REJECT <span class="fa fa-close"></span></a></div>
+        </div>
+        <% end %>
+    </div>
+
+    </div>
+  <% end %>
+<% end %>
 </div>
 
-
+<style>
+a{
+  text-decoration: none;
+}
+.accept {
+  color: #FFF;
+  background: #44CC44;
+  padding: 15px 20px;
+  box-shadow: 0 4px 0 0 #2EA62E;
+}
+.accept:hover {
+  background: #6FE76F;
+  box-shadow: 0 4px 0 0 #7ED37E;
+}
+.deny {
+  color: #FFF;
+  background: tomato;
+  padding: 15px 20px;
+  box-shadow: 0 4px 0 0 #CB4949;
+}
+.deny:hover {
+  background: rgb(255, 147, 128);
+  box-shadow: 0 4px 0 0 #EF8282;
+}
+</style>
