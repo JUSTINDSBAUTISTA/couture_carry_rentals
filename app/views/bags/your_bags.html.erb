@@ -1,4 +1,15 @@
 <h2 class="text-center mt-4">Your bags</h2>
+<%# If your bag is empty, this will print %>
+<% if @bags.empty? %>
+  <p class="text-center m-0 opacity-25"> Your bag is empty </p>
+  <div class="d-flex justify-content-center">
+<%# Redirect to create new bag  %>
+    <%= link_to new_bag_path do %>
+      <button type="button" class="btn btn-primary">Add Bag</button>
+    <% end %>
+  </div>
+<% else %>
+<%# This is our cards for the bags  %>
 <div class="row">
   <% @bags.each do |bag| %>
     <div class="col-4">
@@ -11,4 +22,5 @@
       </div>
     </div>
   <% end %>
+<% end %>
 </div>
