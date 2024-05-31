@@ -1,4 +1,5 @@
-<h2 class="text-center mt-4">Your bags</h2>
+<div class="container">
+<h2 class="my-4 opacity-50">Your bags</h2>
 <%# If your bag is empty, this will print %>
 <% if @bags.empty? %>
   <p class="text-center m-0 opacity-25"> Your bag is empty </p>
@@ -10,17 +11,54 @@
   </div>
 <% else %>
 <%# This is our cards for the bags  %>
-<div class="row">
+
   <% @bags.each do |bag| %>
-    <div class="col-4">
-      <div>
-        <%= link_to bag_path(bag), class: "text-decoration-none" do %>
-          <div class="card-category my-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=bag.picture_url%>)">
-            <h3><%= bag.brand.capitalize %></h3>
-          </div>
-        <% end %>
+    <div class="request-product my-3  ">
+      <img src="<%= bag.picture_url %>" />
+      <div class="request-product-infos">
+        <h2><%= bag.brand %></h2>
+        <p><%= bag.description %></p>
       </div>
+    </div>
+    <div>
+    <div class="text-start bg-light bg-gradient">
+      <p class="ml-0" style= "font-size: 30px"><%= bag.brand %> has "<%= bag.requests.length %>" pending requests:</p>
+        <% bag.requests.each do |request| %>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-grow-1 bd-highlight"><p style="font-size: 20px" class="opacity-50"><%= request.status.capitalize %></p></div>
+          <div class="p-2 bd-highlight"><a href="#" class="accept">ACCEPT <span class="fa fa-check"></span></a></div>
+          <div class="p-2 bd-highlight"> <a href="#" class="deny">REJECT <span class="fa fa-close"></span></a></div>
+        </div>
+        <% end %>
+    </div>
+
     </div>
   <% end %>
 <% end %>
-</div>
+
+
+<style>
+a{
+  text-decoration: none;
+}
+.accept {
+  color: #FFF;
+  background: #44CC44;
+  padding: 15px 20px;
+  box-shadow: 0 4px 0 0 #2EA62E;
+}
+.accept:hover {
+  background: #6FE76F;
+  box-shadow: 0 4px 0 0 #7ED37E;
+}
+.deny {
+  color: #FFF;
+  background: tomato;
+  padding: 15px 20px;
+  box-shadow: 0 4px 0 0 #CB4949;
+}
+.deny:hover {
+  background: rgb(255, 147, 128);
+  box-shadow: 0 4px 0 0 #EF8282;
+}
+</style>

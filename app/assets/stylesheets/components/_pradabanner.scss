@@ -7,28 +7,20 @@
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-    
 }
-
-
 .card-img-top1 {
     width: 100%;
     object-fit: cover;
-    max-width: 50%; 
+    max-width: 50%;
     border-right: 2px solid;
     position: relative;
     display: inline-block;
     object-fit: cover;
     flex-basis: calc(25% - 10px);
 }
-
 p {
     color: black;
     font-family: 'Futura PT', sans-serif; /* Adding Futura PT font family */
     margin-left: 50px;
     font-size: 40px;
 }
-
-
-
