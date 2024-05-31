@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
-  def about
-  end
+  skip_before_action :authenticate_user!, only: [:home, :about, :contact]
 
-  def contact
+  def home
   end
 end

@@ -3,6 +3,12 @@
     display: inline-block; /* Added to make the container size fit content */
 }
 
+.banner-container img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+
 .center-top-text {
     position: absolute;
     top: 50%;
@@ -10,26 +16,45 @@
     transform: translate(-50%, -50%);
     padding: 20px;
     text-align: center;
-    font-size: 100px; /* Adjust the font size as needed */
-    font-weight: bold; /* You can add other font properties if desired */
-    font-family: 'Playfair Display', serif; /* Add Playfair Display font */
+    font-weight: bold; 
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    overflow: hidden;
+    border-left:1em solid transparent;
+    border-right:1em solid transparent;
+    text-overflow: ellipsis;
 }
+
+.banner-container p {
+    font-size: 5vw; /* Font size relative to viewport width */
+    font-family: 'Futura PT', sans-serif;
+    margin-left: 5%; /* Margin as a percentage of the container width */
+    color: white;
+}
+
+/* Adjust font size for smaller screens */
+@media screen and (max-width: 768px) {
+    .banner-container p {
+        font-size: 8vw;
+    }
+}
+
+/* Add more media queries as needed for different screen sizes */
 
 .center-top-text p {
     margin: 0; /* Remove default margin */
 }
 
 .action-button {
-    background-color: #a0a0a0;
-    color: #606060;
-    border: 2px solid #686869;
+    background-color: #030303;
+    color: #fffcfc;
+    border: 2px solid #000000;
     padding: 10px 60px;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.1s;
 }
 
 .action-button:hover {
@@ -37,9 +62,7 @@
     color: #ffffff;
 }
 
-.banner-container img {
-    max-width: 100%; 
-    height: auto; 
-    margin-bottom: 50px;
-    
+.main-content {
+    width: 100%;
+    max-width: none; /* Optionally, remove any maximum width */
 }

@@ -1,24 +1,28 @@
-
 <div class="container p-3 mt-3">
-  <%= form_for @bag do |b| %>
-    <div class="col-12 mt-3 ">
+<%= link_to "❌", :back, class: "return-button" %>
+  <%= form_for @bag, html: {class: "rental-form"} do |b| %>
+    <div class="form-group">
       <%= b.label :brand, class: "form-label" %>
-      <%= b.text_field :brand, class: "form-control" %>
+      <%= b.text_field :brand, class: "form-control", placeholder: "Enter brand name", required: true %>
     </div>
-    <div class="col-12 mt-3">
-      <%= b.label :picture_url, class: "form-label" %>
-      <%= b.text_field :picture_url, class: "form-control" %>
+    <div class="form-group">
+      <%= b.label :price_per_day, class: "form-label" %>
+      <%= b.text_field :price_per_day, class: "form-control", placeholder: "Enter your price", required: true %>
     </div>
-    <div class="col-12 mt-3">
+    <div class="form-group">
       <%= b.label :description, class: "form-label" %>
-      <%= b.text_field :description, class: "form-control" %>
+      <%= b.text_area :description, class: "form-control", placeholder: "Enter description", required: true %>
     </div>
-    <div class="col-12 mt-3">
+    <div class="form-group">
       <%= b.label :condition, class: "form-label" %>
-      <%= b.select :condition, Bag::CONDITIONS , class: "form-control" %>
+      <%= b.select :condition, Bag::CONDITIONS, {}, class: "form-control", required: true %>
     </div>
-    <div class="col-12 mt-3">
-      <%= b.submit class: "btn btn-outline-primary" %>
+    <div class="form-group">
+      <%= b.label :picture_url, class: "form-label" %>
+      <%= b.text_field :picture_url, class: "form-control", required: true %>
+    </div>
+    <div class="form-group text-center">
+      <%= b.submit "List Your Bag ", class: "btn btn-primary btn-lg" %>
     </div>
   <% end %>
 </div>

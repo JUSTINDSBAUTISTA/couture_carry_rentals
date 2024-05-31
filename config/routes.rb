@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   end
   resources :requests, only: [:index, :show]
 
-
   # i added the route for the overview page
+  get "/your_bags", to: "bags#your_bags"
   get "/about", to: "pages#about", as: :about
   get "/contact", to: "pages#contact"
   # Defines the root path route ("/")

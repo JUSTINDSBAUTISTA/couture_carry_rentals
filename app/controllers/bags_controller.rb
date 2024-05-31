@@ -1,10 +1,25 @@
 class BagsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @bags = Bag.all
+    if current_user
+      @bags = Bag.where.not(user_id: current_user.id)
+    else
+      @bags = Bag.all
+    end
+    if params[:query].present?
+      @bags = @bags.search_by_brand(params[:query])
+    else
+      @bags = @bags.all
+    end
+  end
+
+  def your_bags
+    @bags = Bag.where(user_id: current_user.id)
   end
 
   def show
     @bag = Bag.find(params[:id])
+    @request = Request.new
   end
 
   def new
@@ -13,9 +28,12 @@ class BagsController < ApplicationController
 
   def create
     @bag = Bag.new(bag_params)
-    @bag.save
-
-    redirect_to bag_path(@bag)
+    @bag.user = current_user
+    if @bag.save
+      redirect_to your_bags_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
