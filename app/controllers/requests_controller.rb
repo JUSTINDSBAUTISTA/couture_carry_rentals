@@ -26,9 +26,21 @@ class RequestsController < ApplicationController
     end
   end
 
+  def update
+    @request = Request.find(params[:id])
+    @request.update(update_request_params)
+    @request.save
+
+    redirect_to your_bags_path
+  end
+
   private
 
   def request_params
     params.require(:request).permit(:start_date, :end_date)
+  end
+
+  def update_request_params
+    params.require(:request).permit(:status)
   end
 end
