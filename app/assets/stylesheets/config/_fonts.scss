@@ -1,10 +1,15 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-@import url('https://fonts.cdnfonts.com/css/futura-pt');  
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 $font-family: 'Futura PT', sans-serif;
+$dark-navy: #2c3e50; /* Dark Navy color */
+$gold: #f8c10e; /* Gold color */
+$white: #ffffff; /* White color */
+$light-gray: #ecf0f1; /* Light Gray color */
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -15,4 +20,3 @@ $font-family: 'Futura PT', sans-serif;
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-       

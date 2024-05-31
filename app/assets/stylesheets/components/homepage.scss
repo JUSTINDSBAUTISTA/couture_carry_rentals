@@ -1,0 +1,54 @@
+
+
+.cool-collection {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    font-family: 'Futura PT', sans-serif;
+}
+
+/* Cool Card Group */
+.cool-card-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between ;
+    padding: 0 20px; /* Add some padding to the sides */
+    
+}
+
+/* Cool Card */
+.cool-card {
+    flex-basis: calc(20% - 20px); /* Adjust as needed */
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cool Card Image Top */
+.cool-card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%; /* Ensure the image fills the card horizontally */
+}
+
+
+.cool-card-body {
+    padding: 20px;
+}
+
+/* Cool Card Title */
+.cool-card-title {
+    font-size: 20px;
+    color: #444;
+}
+
+/* Cool Card Text */
+.cool-card-text {
+    color: #666;
+}
+
+/* Cool Text Muted */
+.cool-text-muted {
+    color: #999;
+}
