@@ -33,7 +33,8 @@
         <% bag.requests.order(id: :desc).each do |request| %>
           <div class="d-flex bd-highlight">
             <div class="p-2 flex-grow-1 bd-highlight">
-              <p style="font-size: 20px" class="opacity-50"><%= request.status.capitalize %></p>
+              <p style="font-size: 20px" class="opacity-50"><%= request.status.capitalize %> request on <%= request.start_date %>-<%= request.end_date %></p>
+              <p style="font-size: 20px" class="opacity-50"> <strong> Ordered by: </strong><%= bag.user.email.capitalize %></p>
             </div>
             <%= button_to request_path(request), method: :patch, params: { request: { status: "approved" } }, class: "btn btn-success m-2 text-light" do %>
               <div class="p-2 bd-highlight">ACCEPT <span class="fa fa-check"></span></div>
